@@ -55,8 +55,8 @@ HivePlug.prototype = {
     },
 
     /**
-     * Get Light bulb
-     * -- Get light bulb
+     * Get Plug
+     * -- Get Plug
      */
     getplug: function(callback) {
         var me = this;
@@ -78,8 +78,7 @@ HivePlug.prototype = {
                 resp.nodes.forEach(function(node){
 					me.log(node.nodeType);
 					me.log(me.name);
-                    if (node.nodeType === 'http://alertme.com/schema/json/node.class.smartplug.json#'
-                        && me.name === node.name){
+                    if (me.name === node.name){
                         id = node.id;
                     }
                 });
@@ -135,7 +134,7 @@ HivePlug.prototype = {
     },
 
     /**
-     *  Get Light Bulb Status
+     *  Get Plug Status
      *  -- Checks to see if plug is on or off.
      */
     getplugOnCharacteristic: function(next) {
